@@ -1,0 +1,60 @@
+{
+  "source": "https://docs.aws.amazon.com/organizations/latest/userguide/syntax-inheritance.html",
+  "updated": "2026-09-16",
+  "policy_types": [
+    {
+      "type": "DECLARATIVE_POLICY_EC2",
+      "service": "Amazon EC2",
+      "examples": [
+        "declarative/ec2-image-block-public-sharing.json"
+      ]
+    },
+    {
+      "type": "BACKUP_POLICY",
+      "service": "AWS Backup"
+    },
+    {
+      "type": "TAG_POLICY",
+      "service": "Cross-service tags",
+      "examples": [
+        "declarative/tag-standard.json"
+      ]
+    },
+    {
+      "type": "CHATBOT_POLICY",
+      "service": "AWS chat applications"
+    },
+    {
+      "type": "AISERVICES_OPT_OUT_POLICY",
+      "service": "AI services"
+    },
+    {
+      "type": "SECURITYHUB_POLICY",
+      "service": "AWS Security Hub"
+    },
+    {
+      "type": "BEDROCK_POLICY",
+      "service": "Amazon Bedrock"
+    },
+    {
+      "type": "INSPECTOR_POLICY",
+      "service": "Amazon Inspector"
+    },
+    {
+      "type": "UPGRADE_ROLLOUT_POLICY",
+      "service": "AWS upgrade rollout"
+    },
+    {
+      "type": "S3_POLICY",
+      "service": "Amazon S3",
+      "examples": [
+        "declarative/s3-block-public-access.json"
+      ]
+    },
+    {
+      "type": "SHIELD_NETWORK_SECURITY_DIRECTOR_POLICY",
+      "service": "AWS Shield Network Security Director"
+    }
+  ],
+  "notes": "Each type has a distinct schema. Add a JSON example only after validating against its current AWS service-specific schema."
+}
