@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransportsignin",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "signin:*",
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false",
+          "aws:PrincipalIsAWSService": "false"
+        }
+      }
+    }
+  ]
+}
