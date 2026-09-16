@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInsecureTransportForSupportedResources",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [
+        "cloudfront:*",
+        "cloudsearch:*",
+        "logs:*",
+        "networkmonitor:*",
+        "clouddirectory:*",
+        "cognito-identity:*",
+        "cognito-idp:*",
+        "comprehend:*",
+        "comprehendmedical:*",
+        "firehose:*",
+        "dynamodb:*",
+        "dax:*",
+        "autoscaling:*",
+        "ecr:*",
+        "inspector-scan:*",
+        "kendra:*",
+        "kinesisvideo:*",
+        "memorydb:*",
+        "aoss:*",
+        "polly:*",
+        "s3:*",
+        "sqs:*",
+        "textract:*",
+        "timestream-influxdb:*",
+        "transcribe:*",
+        "translate:*",
+        "appstream:*",
+        "appconfig:*",
+        "codebuild:*",
+        "codecommit:*",
+        "codepipeline:*",
+        "cost-optimization-hub:*",
+        "events:*",
+        "fis:*",
+        "health:*",
+        "kms:*",
+        "opensearch:*",
+        "pricing:*",
+        "pca-connector-ad:*",
+        "secretsmanager:*",
+        "sts:*",
+        "signin:*",
+        "support:*",
+        "transfer:*",
+        "wafv2:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false",
+          "aws:PrincipalIsAWSService": "false"
+        }
+      }
+    }
+  ]
+}
