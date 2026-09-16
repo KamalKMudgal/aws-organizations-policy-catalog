@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenySecurityTelemetryTamperingExceptBreakGlass",
+      "Effect": "Deny",
+      "Action": [
+        "cloudtrail:DeleteTrail",
+        "cloudtrail:StopLogging",
+        "cloudtrail:UpdateTrail",
+        "cloudtrail:PutEventSelectors",
+        "cloudtrail:PutInsightSelectors",
+        "config:DeleteConfigurationRecorder",
+        "config:DeleteDeliveryChannel",
+        "config:StopConfigurationRecorder",
+        "config:PutConfigurationRecorder",
+        "config:PutDeliveryChannel",
+        "guardduty:DeleteDetector",
+        "guardduty:UpdateDetector",
+        "guardduty:DisassociateFromAdministratorAccount"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnNotLike": {
+          "aws:PrincipalArn": "arn:aws:iam::*:role/REPLACE_WITH_BREAK_GLASS_ROLE"
+        }
+      }
+    }
+  ]
+}
