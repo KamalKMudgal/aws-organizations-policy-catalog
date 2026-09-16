@@ -1,0 +1,21 @@
+name: Validate policy JSON
+
+on:
+  pull_request:
+    paths: ["**.json", ".github/workflows/**"]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate JSON documents
+        run: |
+          while IFS= read -r -d '' file; do
+            python -m json.tool "$file" > /dev/null
+          done < <(find scp rcp declarative coverage -name '*.json' -print0)
