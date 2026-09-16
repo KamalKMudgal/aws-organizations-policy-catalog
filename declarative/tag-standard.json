@@ -1,0 +1,33 @@
+{
+  "tags": {
+    "costcenter": {
+      "tag_key": {
+        "@@assign": "CostCenter"
+      },
+      "tag_value": {
+        "@@assign": [
+          "100",
+          "200",
+          "300"
+        ]
+      },
+      "enforced_for": {
+        "@@assign": [
+          "secretsmanager:ALL_SUPPORTED"
+        ]
+      }
+    },
+    "environment": {
+      "tag_key": {
+        "@@assign": "Environment"
+      },
+      "tag_value": {
+        "@@assign": [
+          "development",
+          "test",
+          "production"
+        ]
+      }
+    }
+  }
+}
